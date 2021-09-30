@@ -1,0 +1,60 @@
+# depslib dependency file v1.0
+1632918393 source:c:\users\gabri\documents\schule\pos\cpp\personlist\main.cpp
+	<iostream>
+	"Address.h"
+	"Person.h"
+	"PersonList.h"
+
+1632914560 source:c:\users\gabri\documents\schule\pos\cpp\personlist\address.cpp
+	"Address.h"
+	<cstring>
+	<iostream>
+
+1632914474 c:\users\gabri\documents\schule\pos\cpp\personlist\address.h
+
+1632914634 source:c:\users\gabri\documents\schule\pos\cpp\personlist\person.cpp
+	"Person.h"
+	<iostream>
+	<cstring>
+
+1632914530 c:\users\gabri\documents\schule\pos\cpp\personlist\person.h
+	"Address.h"
+
+1632918526 source:c:\users\gabri\documents\schule\pos\cpp\personlist\personlist.cpp
+	"PersonList.h"
+	<iostream>
+	<cstring>
+
+1632917774 c:\users\gabri\documents\schule\pos\cpp\personlist\personlist.h
+	"Person.h"
+
+1632914560 source:p:\gabriel\schule\pos\cpp\personlist\address.cpp
+	"Address.h"
+	<cstring>
+	<iostream>
+
+1632914474 p:\gabriel\schule\pos\cpp\personlist\address.h
+
+1633038765 source:p:\gabriel\schule\pos\cpp\personlist\main.cpp
+	<iostream>
+	"Address.h"
+	"Person.h"
+	"PersonList.h"
+
+1633026828 p:\gabriel\schule\pos\cpp\personlist\person.h
+	"Address.h"
+
+1633035418 p:\gabriel\schule\pos\cpp\personlist\personlist.h
+	"Person.h"
+	<iostream>
+	<initializer_list>
+
+1633036945 source:p:\gabriel\schule\pos\cpp\personlist\person.cpp
+	"Person.h"
+	<iostream>
+	<cstring>
+
+1633038954 source:p:\gabriel\schule\pos\cpp\personlist\personlist.cpp
+	"PersonList.h"
+	<cstring>
+
