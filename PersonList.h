@@ -7,7 +7,7 @@ class PersonList {
 
 public:
     PersonList();
-    PersonList(std::initializer_list<Person> personList, int noe);
+    PersonList(const std::initializer_list<const Person> &personList);
     ~PersonList();
     PersonList(const PersonList &p);
 
@@ -15,13 +15,13 @@ public:
     void removeAt(int index);
 
     Person* getPersonbyIndex(int index) const;
-    /*Person***/PersonList getPersonListFromWithZIP(const char* fromStr, const char* toStr) const;
+    PersonList getPersonListFromWithZIP(const char* fromStr) const;
 
     void show() const;
 private:
     Person* *personList;
     int noe;
 
-    void addMemory();
+    void copyMemory(int addValue = 0);
     bool inRange(int index) const;
 };
