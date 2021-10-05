@@ -17,7 +17,7 @@ PersonList::PersonList(const std::initializer_list<const Person> &personList) {
     }
 }
 PersonList::~PersonList(){
-    deletePersonArray(this->personList, this->noe)
+    deletePersonArray(this->personList, this->noe);
 }
 PersonList::PersonList(const PersonList &p){
 
@@ -69,10 +69,11 @@ PersonList PersonList::getPersonListFromWithZIP(const char* fromStr) const{
 }
 void PersonList::show() const {
 
-    std::cout << "[\n";
+    std::cout << "PersonList: [\n";
     for(int i = 0; i < this->noe; i++){
         std::cout << i << " ";
         this->personList[i]->show();
+        if(i != this->noe - 1) std::cout << ",";
         std::cout << "\n";
     }
     std::cout << "]";
