@@ -1,5 +1,6 @@
 #pragma once
 #include "Address.h"
+#include <iostream>
 
 class Person{
 public:
@@ -14,6 +15,8 @@ public:
     Address getAddress() const;
 
     void show() const;
+    Person& operator=(const Person& that);
+    friend std::ostream& operator<<(std::ostream& os, const Person& that);
 private:
     char* name;
     Address address;

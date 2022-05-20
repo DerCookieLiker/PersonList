@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 
 class Address {
 public:
@@ -17,6 +18,9 @@ public:
     int getNumber() const;
 
     void show() const;
+
+    Address& operator=(const Address& that);
+    friend std::ostream& operator<<(std::ostream& os, const Address& that);
 private:
     char* city;
     char* zip;

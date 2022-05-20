@@ -1,6 +1,5 @@
 #include "Address.h"
 #include <cstring>
-#include <iostream>
 
 Address::Address(const char* city, const char* zip, const char* street, const int number) : number(number){
 
@@ -70,4 +69,29 @@ char* Address::createMemory(const char* str) const{
 void Address::show() const {
 
     std::cout << "Address: [ city: " << this->city << " | zip: " << this->zip << " | street: " << this->street << " | number: " << this->number << " ]";
+}
+Address& Address::operator=(const Address& that){
+
+    if(this == &that) return *this;
+
+    delete [] this->city;
+    delete [] this->zip;
+    delete [] this->street;
+
+    this->city = this->createMemory(that.city);
+    strcpy(this->city, that.city);
+
+    this->zip = this->createMemory(that.zip);
+    strcpy(this->zip, that.zip);
+
+    this->street = this->createMemory(that.street);
+    strcpy(this->street, that.street);
+
+    this->number = that.number;
+
+    return *this;
+}
+std::ostream& operator<<(std::ostream& os, const Address& that){
+    os << "Address: [ city: " << that.city << " | zip: " << that.zip << " | street: " << that.street << " | number: " << that.number << " ]";
+    return os;
 }

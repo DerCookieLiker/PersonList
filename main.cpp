@@ -13,6 +13,15 @@ int main(){
 
     PersonList src({Person("Max", Address("Tester", "7042", "Testmedia", 42)),
                     Person("Jessy", Address("Tester", "7042", "Testmedia", 43))});
+
+    PersonList c({Person("placeHolder", Address("p", "p", "p", 20))});
+
+    c = src;
+
+    std::cout << c;
+
+    PersonList src({Person("Max", Address("Tester", "7042", "Testmedia", 42)),
+                    Person("Jessy", Address("Tester", "7042", "Testmedia", 43))});
     Person in("Franz", Address("World", "4200", "Hello", 1));
     PersonList testZip({
                         Person("Test0", Address("Test0", "5000", "Testmedia", 0)),
@@ -41,6 +50,7 @@ int main(){
 
     testPersonListGetFromWithZip(testZip, "8000", PersonList({
                         Person("Test4", Address("Test4", "8050", "Testmedia", 4))}));
+
 }
 void testPersonListRemoveAt(const PersonList &src, const int index, const PersonList &xpt){
 

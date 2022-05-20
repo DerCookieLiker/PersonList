@@ -1,5 +1,4 @@
 #include "Person.h"
-#include <iostream>
 #include <cstring>
 
 Person::Person(const char* name, const Address &address) : address(address) {
@@ -36,4 +35,19 @@ void Person::show() const {
     std::cout << "Person { \n   name: " << this->name << "\n   ";
     this->address.show();
     std::cout << "\n}";
+}
+Person& Person::operator=(const Person& that){
+    if(this == &that) return *this;
+    delete [] this->name;
+
+    this->name = new char[strlen(name) + 1];
+    strcpy(this->name, name);
+
+    this->address = that.address;
+
+    return *this;
+}
+std::ostream& operator<<(std::ostream& os, const Person& that){
+    os << "Person { \n   name: " << that.name << "\n   " << that.address << "\n}";
+    return os;
 }

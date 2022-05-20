@@ -18,6 +18,9 @@ public:
     PersonList getPersonListFromWithZIP(const char* fromStr) const;
 
     void show() const;
+
+    PersonList& operator=(const PersonList &rhs);
+    friend std::ostream& operator<<(std::ostream& os, const PersonList &rhs);
 private:
     Person* *personList;
     int noe;

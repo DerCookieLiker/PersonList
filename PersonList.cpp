@@ -94,6 +94,30 @@ void PersonList::copyMemory(int addValue){
 
     this->personList = temp;
 }
+PersonList& PersonList::operator=(const PersonList &rhs){
+    if(this == &rhs) return *this;
+    deletePersonArray(this->personList, this->noe);
+
+    this->noe = rhs.noe;
+    this->personList = new Person*[rhs.noe];
+
+    for(int i = 0; i < rhs.noe; i++){
+        this->personList[i] = new Person(*(rhs.personList[i]));
+    }
+    return *this;
+}
+std::ostream& operator<<(std::ostream& os, const PersonList &rhs){
+    os << "PersonList: [\n";
+    for(int i = 0; i < rhs.noe; i++){
+        os << i << " ";
+        rhs.personList[i]->show();
+        if(i != rhs.noe - 1) os << ",";
+        os << "\n";
+    }
+    os << "]";
+
+    return os;
+}
 
 void deletePersonArray(Person** personList, const int noe) {
     for(int i = 0; i < noe; i++){
